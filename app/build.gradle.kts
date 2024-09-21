@@ -70,10 +70,13 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.0")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0")
 
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.x.x")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.x.x")
-    implementation ("io.ktor:ktor-client-core:2.x.x")
-    implementation ("io.ktor:ktor-client-android:2.x.x")
+    //coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    implementation ("io.ktor:ktor-client-core:2.3.12")
+    implementation ("io.ktor:ktor-client-android:2.3.12")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.CheckYourBIN" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.CheckYourBIN" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Здесь вы можете добавить свои настройки для темы -->
+    </style>
+
 </resources>
