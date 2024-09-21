@@ -1,8 +1,9 @@
-package com.example.checkyourbin
+package com.example.checkyourbin.ui
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.checkyourbin.R
 import com.example.checkyourbin.data.BinRepository
 import com.example.checkyourbin.data.network.RetrofitClient
 import kotlinx.coroutines.CoroutineScope
@@ -10,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-class MainActivity : AppCompatActivity() {
+class BinCheckActivity : AppCompatActivity() {
     private lateinit var repository: BinRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {

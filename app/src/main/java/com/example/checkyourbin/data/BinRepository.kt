@@ -9,7 +9,6 @@ class BinRepository(private val apiService: BinApiService) {
         return try {
             val response = apiService.getBinInfo(bin)
 
-            // Логируем запрос и ответ
             Log.d("BinRepository", "Request BIN: $bin")
             Log.d("BinRepository", "Response code: ${response.code()}")
 

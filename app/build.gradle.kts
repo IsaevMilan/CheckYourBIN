@@ -74,6 +74,12 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
+    // Koin
+    implementation ("org.koin:koin-android: 3.2.0")
+    implementation ("org.koin:koin-android-scope: 3.2.0")
+    implementation ("io.insert-koin:koin-android:3.4.0")
+
+
     implementation ("io.ktor:ktor-client-core:2.3.12")
     implementation ("io.ktor:ktor-client-android:2.3.12")
 
