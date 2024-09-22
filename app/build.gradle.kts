@@ -62,6 +62,8 @@ dependencies {
 
     // Room для работы с базой данных
     implementation ("androidx.room:room-runtime:2.6.1")
+    implementation(libs.androidx.coordinatorlayout)
+    implementation(libs.material)
     kapt (libs.androidx.room.compiler)
     implementation ("androidx.room:room-ktx:2.6.1") // Коррутины для Room
 
@@ -77,6 +79,7 @@ dependencies {
 
     // Koin
 //    implementation ("org.koin:koin-android-scope: 3.4.0")
+//    implementation("io.insert-koin:koin-androidx-viewmodel:3.4.0")
     implementation ("io.insert-koin:koin-android:3.4.0")
 
 

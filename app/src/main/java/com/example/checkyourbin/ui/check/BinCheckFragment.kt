@@ -5,11 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.checkyourbin.databinding.FragmentBinCheckBinding
-import com.example.checkyourbin.ui.BinRootActivity
 import com.example.checkyourbin.ui.BinViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import android.text.util.Linkify
 
 class BinCheckFragment : Fragment() {
 
@@ -29,23 +28,41 @@ class BinCheckFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Set up the button click listener to fetch BIN info
         binding.checkButton.setOnClickListener {
             val bin = binding.binInput.text.toString()
             viewModel.fetchBinInfo(bin)
         }
 
+        // Observe BIN info data
         viewModel.binInfo.observe(viewLifecycleOwner) { binResponse ->
-            // Обновление UI с результатами BIN
-            binding.resultTextView.text = binResponse?.toString() ?: "No result"
+            if (binResponse != null) {
+                // Update UI with the BIN info data
+                binding.countryTextView.text = "Country: ${binResponse.country?.name ?: "N/A"}"
+                binding.coordinatesTextView.text = "Coordinates: ${binResponse.country?.latitude ?: "N/A"}, ${binResponse.country?.longitude ?: "N/A"}"
+                binding.cardTypeTextView.text = "Card Type: ${binResponse.type ?: "N/A"}"
+                binding.bankDetailsTextView.text = "Bank: ${binResponse.bank?.name ?: "N/A"}"
+                binding.phoneTextView.text = binResponse.bank?.phone ?: "N/A"
+                binding.emailTextView.text = binResponse.bank?.url ?: "N/A"
+
+                // Make phone and email clickable
+                Linkify.addLinks(binding.phoneTextView, Linkify.PHONE_NUMBERS)
+                Linkify.addLinks(binding.emailTextView, Linkify.EMAIL_ADDRESSES)
+            }
         }
 
+        // Observe error messages and show placeholder in case of errors
         viewModel.error.observe(viewLifecycleOwner) { errorMsg ->
-            // Обработка ошибки
-            binding.resultTextView.text = errorMsg
-        }
-
-        binding.historyButton.setOnClickListener {
-            (activity as? BinRootActivity)?.showHistoryFragment() // Переход к истории
+            if (errorMsg != null) {
+                binding.errorTextView.text = "It seems an error occurred, please try again."
+                binding.errorTextView.visibility = View.VISIBLE
+                // Hide the result section on error
+                binding.resultSection.visibility = View.GONE
+            } else {
+                // Hide error message and show the result section
+                binding.errorTextView.visibility = View.GONE
+                binding.resultSection.visibility = View.VISIBLE
+            }
         }
     }
 

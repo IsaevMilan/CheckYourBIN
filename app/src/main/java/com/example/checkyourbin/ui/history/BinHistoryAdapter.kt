@@ -3,7 +3,6 @@ package com.example.checkyourbin.ui.history
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.checkyourbin.R
 import com.example.checkyourbin.data.db.BinHistoryEntity
 import com.example.checkyourbin.databinding.ItemHistoryBinding
 

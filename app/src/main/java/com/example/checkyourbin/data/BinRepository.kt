@@ -23,12 +23,10 @@ class BinRepository(
         }
     }
 
-    // Сохранение истории запроса в базу данных
     suspend fun saveHistory(history: BinHistoryEntity) {
         binHistoryDao.insertBinHistory(history)
     }
 
-    // Получение всей истории из базы данных
     suspend fun getHistory(): List<BinHistoryEntity> {
         return binHistoryDao.getBinHistory()
     }

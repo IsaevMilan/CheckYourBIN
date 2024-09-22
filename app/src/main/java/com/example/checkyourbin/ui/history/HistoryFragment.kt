@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.checkyourbin.databinding.FragmentHistoryBinding
 import com.example.checkyourbin.ui.BinViewModel
@@ -37,9 +36,19 @@ class HistoryFragment : Fragment() {
             adapter = historyAdapter
         }
 
-        // Наблюдаем за изменениями в истории запросов
         viewModel.history.observe(viewLifecycleOwner) { historyList ->
             historyAdapter.submitList(historyList)
+        }
+
+        viewModel.history.observe(viewLifecycleOwner) { historyList ->
+            if (historyList.isEmpty()) {
+                binding.historyRecycler.visibility = View.GONE
+                binding.placeholderTextView.visibility = View.VISIBLE
+            } else {
+                binding.historyRecycler.visibility = View.VISIBLE
+                binding.placeholderTextView.visibility = View.GONE
+                historyAdapter.submitList(historyList)
+            }
         }
     }
 
