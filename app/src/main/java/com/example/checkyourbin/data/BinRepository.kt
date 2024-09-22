@@ -9,23 +9,10 @@ class BinRepository(
     private val binHistoryDao: BinHistoryDao
 ) {
     suspend fun getBinInfo(bin: String): Result<BinResponse> {
-
-        // Добавляем сохранение истории в БД, если запрос успешен
         return try {
             val response = apiService.getBinInfo(bin)
             if (response.isSuccessful) {
                 response.body()?.let {
-                    binHistoryDao.insertBinHistory(
-                        BinHistoryEntity(
-                            bin = bin,
-                            scheme = it.scheme,
-                            type = it.type,
-                            brand = it.brand,
-                            prepaid = it.prepaid,
-                            countryName = it.country?.name,
-                            bankName = it.bank?.name
-                        )
-                    )
                     Result.success(it)
                 } ?: Result.failure(Exception("No data"))
             } else {
@@ -36,6 +23,12 @@ class BinRepository(
         }
     }
 
+    // Сохранение истории запроса в базу данных
+    suspend fun saveHistory(history: BinHistoryEntity) {
+        binHistoryDao.insertBinHistory(history)
+    }
+
+    // Получение всей истории из базы данных
     suspend fun getHistory(): List<BinHistoryEntity> {
         return binHistoryDao.getBinHistory()
     }

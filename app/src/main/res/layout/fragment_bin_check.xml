@@ -1,31 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/bin_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Введите BIN" />
+        android:hint="Enter BIN" />
 
     <Button
-        android:id="@+id/search_button"
+        android:id="@+id/checkButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Найти" />
+        android:text="Chek" />
 
     <TextView
-        android:id="@+id/country"
+        android:id="@+id/resultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/historyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Страна: " />
-
-    <TextView
-        android:id="@+id/card_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Тип карты: " />
-
+        android:text="History" />
 </LinearLayout>

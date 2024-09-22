@@ -61,9 +61,9 @@ dependencies {
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.1")
 
     // Room для работы с базой данных
-    implementation ("androidx.room:room-runtime:2.5.0")
-    kapt ("androidx.room:room-compiler:2.5.0")
-    implementation ("androidx.room:room-ktx:2.5.0") // Коррутины для Room
+    implementation ("androidx.room:room-runtime:2.6.1")
+    kapt (libs.androidx.room.compiler)
+    implementation ("androidx.room:room-ktx:2.6.1") // Коррутины для Room
 
     // ViewModel и LiveData (Jetpack компоненты)
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
@@ -71,18 +71,19 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0")
 
     //coroutines
+    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     // Koin
-    implementation ("org.koin:koin-android: 3.2.0")
-    implementation ("org.koin:koin-android-scope: 3.2.0")
+//    implementation ("org.koin:koin-android-scope: 3.4.0")
     implementation ("io.insert-koin:koin-android:3.4.0")
 
 
     implementation ("io.ktor:ktor-client-core:2.3.12")
     implementation ("io.ktor:ktor-client-android:2.3.12")
 
+    implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
