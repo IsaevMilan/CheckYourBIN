@@ -1,5 +1,6 @@
 package com.example.checkyourbin.ui.history
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -20,9 +21,9 @@ class BinHistoryAdapter : RecyclerView.Adapter<HistoryViewHolder>() {
         return HistoryViewHolder(binding)
     }
 
-
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
         val binHistory = historyList[position]
+        Log.d("Adapter", "Binding item: $binHistory at position $position")
         holder.bind(binHistory)
     }
 

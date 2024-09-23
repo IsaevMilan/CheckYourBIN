@@ -5,14 +5,25 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/historyHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Request History"
+        android:id="@+id/tvHistoryHeader"
+        android:layout_width="176dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/request_history"
         android:textAppearance="?android:textAppearanceLarge"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/clearHistoryButton"
+        android:layout_width="114dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/clear_history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/historyRecycler"
@@ -20,19 +31,20 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/historyHeader"
+        app:layout_constraintTop_toBottomOf="@id/tvHistoryHeader"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
-        android:id="@+id/placeholderTextView"
+        android:id="@+id/tvPlaceholder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No history yet"
+        android:text="@string/no_history_yet"
+        android:visibility="gone"
         android:textColor="@android:color/darker_gray"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/historyHeader" />
+        app:layout_constraintTop_toBottomOf="@id/tvHistoryHeader" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

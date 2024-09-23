@@ -11,12 +11,11 @@ import org.koin.dsl.module
 val binModule = module {
     single { RetrofitClient.create() }
     single { BinRepository(get(), get()) }
-    viewModel { BinViewModel(get()) }
     single {
         Room.databaseBuilder(get(), BinDatabase::class.java, "bin_database")
             .fallbackToDestructiveMigration()
             .build()
     }
-
     single { get<BinDatabase>().binHistoryDao() }
+    viewModel { BinViewModel(get()) }
 }

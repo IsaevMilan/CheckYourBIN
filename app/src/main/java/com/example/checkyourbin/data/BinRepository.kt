@@ -1,5 +1,6 @@
 package com.example.checkyourbin.data
 
+import android.util.Log
 import com.example.checkyourbin.data.db.BinHistoryDao
 import com.example.checkyourbin.data.db.BinHistoryEntity
 import com.example.checkyourbin.data.network.BinApiService
@@ -23,11 +24,19 @@ class BinRepository(
         }
     }
 
-    suspend fun saveHistory(history: BinHistoryEntity) {
-        binHistoryDao.insertBinHistory(history)
+    suspend fun saveHistory(historyEntity: BinHistoryEntity) {
+        Log.d("BinRepository", "Saving history entity: $historyEntity")
+        binHistoryDao.insertBinHistory(historyEntity)
     }
 
     suspend fun getHistory(): List<BinHistoryEntity> {
-        return binHistoryDao.getBinHistory()
+        val historyList = binHistoryDao.getBinHistory()
+        Log.d("BinRepository", "Loaded history list from DB: $historyList")
+        return historyList
+    }
+
+    suspend fun clearHistory() {
+        Log.d("BinRepository", "Clearing all history")
+        binHistoryDao.clearBinHistory()
     }
 }

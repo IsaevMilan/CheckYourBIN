@@ -16,12 +16,10 @@ class BinRootActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Инициализация binding
         binding = ActivityRootBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         if (savedInstanceState == null) {
-            // Инициализация начального фрагмента
             supportFragmentManager.commit {
                 replace(R.id.fragment_container, BinCheckFragment())
             }

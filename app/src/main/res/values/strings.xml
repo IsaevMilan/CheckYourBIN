@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">CheckYourBIN</string>
+    <string name="instruction">Enter the first 6 to 8 digits of a card number (BIN/IIN)</string>
+    <string name="enter_bin">Enter BIN</string>
+    <string name="check">Check</string>
+    <string name="country">Country:</string>
+    <string name="coordinates">Coordinates:</string>
+    <string name="card_scheme">Card Scheme:</string>
+    <string name="card_type">Card Type:</string>
+    <string name="bank_details">Bank Details:</string>
+    <string name="phone">Phone:</string>
+    <string name="url">Url:</string>
+    <string name="city">City:</string>
+    <string name="it_seems_an_error">It seems an error occurred, please try later.</string>
+    <string name="no_history_yet">No history yet</string>
+    <string name="clear_history">Clear History</string>
+    <string name="request_history">Request History</string>
+    <string name="bin">BIN:</string>
+    <string name="please_enter_a_valid_bin_6_8_digits">Please enter a valid BIN (6-8 digits)</string>
 </resources>

@@ -12,4 +12,7 @@ interface BinHistoryDao {
 
     @Query("SELECT * FROM bin_history ORDER BY timestamp DESC")
     suspend fun getBinHistory(): List<BinHistoryEntity>
+
+    @Query("DELETE FROM bin_history")
+    suspend fun clearBinHistory()
 }

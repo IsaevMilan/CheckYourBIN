@@ -1,42 +1,119 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_marginTop="4dp"
+    android:background="@color/milk"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/bin_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BIN: " />
+        android:text="@string/bin"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/scheme_text"
+        android:id="@+id/tvCountry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scheme: " />
+        android:text="@string/country"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textAppearance="?android:textAppearanceMedium"
+        app:layout_constraintTop_toBottomOf="@id/bin_text"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/type_text"
+        android:id="@+id/tvCoordinates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Type: " />
+        android:text="@string/coordinates"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textAppearance="?android:textAppearanceMedium"
+        app:layout_constraintTop_toBottomOf="@id/tvCountry"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/country_text"
+        android:id="@+id/tvScheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Country: " />
+        android:text="@string/card_scheme"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textAppearance="?android:textAppearanceMedium"
+        app:layout_constraintTop_toBottomOf="@id/tvCoordinates"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/coordinates_text"
+        android:id="@+id/tvCardType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Coordinates: " />
+        android:text="@string/card_type"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textAppearance="?android:textAppearanceMedium"
+        app:layout_constraintTop_toBottomOf="@id/tvScheme"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/bank_details_text"
+        android:id="@+id/tvBankDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bank details: " />
-</LinearLayout>
+        android:text="@string/bank_details"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textAppearance="?android:textAppearanceMedium"
+        app:layout_constraintTop_toBottomOf="@id/tvCardType"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:autoLink="phone"
+        android:textAppearance="?android:textAppearanceMedium"
+        app:layout_constraintTop_toBottomOf="@id/tvBankDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/url"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:autoLink="email"
+        android:textAppearance="?android:textAppearanceMedium"
+        app:layout_constraintTop_toBottomOf="@id/tvPhone"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/bankCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:autoLink="email"
+        android:textAppearance="?android:textAppearanceMedium"
+        app:layout_constraintTop_toBottomOf="@id/tvUrl"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

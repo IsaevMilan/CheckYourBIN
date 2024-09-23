@@ -9,9 +9,12 @@ data class BinHistoryEntity(
     val bin: String,
     val scheme: String?,
     val type: String?,
-    val brand: String?,
-    val prepaid: Boolean?,
     val countryName: String?,
+    val latitude: String?,
+    val longitude: String?,
     val bankName: String?,
-    val timestamp: Long = System.currentTimeMillis()
+    val bankPhone: String?,
+    val bankUrl: String?,
+    val timestamp: Long = System.currentTimeMillis(),
+    val bankCity: String?
 )
